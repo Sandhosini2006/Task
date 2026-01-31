@@ -1,0 +1,58 @@
+openapi: 3.0.2
+
+info:
+  title: Content Group Type API
+  description: Read-only API to list content group types.
+  version: "1.0.0"
+
+paths:
+  /v1/content-group-types:
+    get:
+      summary: List content group types
+      operationId: listContentGroupTypes
+      tags:
+        - content-group-type
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ContentGroupType"
+
+components:
+  schemas:
+    ContentGroupType:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          description: Unique identifier of the content group type
+          example: 1
+
+        name:
+          type: string
+          description: Name of the content group type
+          example: Network
+
+        createdUnixTimestamp:
+          type: integer
+          format: int64
+          description: Creation time as unix timestamp
+          example: 1715600000
+
+        updatedUnixTimestamp:
+          type: integer
+          format: int64
+          description: Last update time as unix timestamp
+          example: 1715700000
+
+        tsVector:
+          type: string
+          description: Internal full-text search vector
+          example: "'network':1"

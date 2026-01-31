@@ -1,0 +1,13 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://34.86.106.230:5432/gtapdb?schema=content_presets
+    username: postgres
+    password: PostgreSQL@123
+
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    org.springframework.r2dbc: INFO
