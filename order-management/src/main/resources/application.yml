@@ -1,0 +1,17 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_management
+    username: root
+    password: AS1002@ai
+
+  security:
+    user:
+      name: admin
+      password: admin123
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
